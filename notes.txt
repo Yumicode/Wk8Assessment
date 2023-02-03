@@ -1,0 +1,50 @@
+Results for the extraLargeArray
+insert 1.2361474000000001 s
+append 3.3235 ms
+
+Results for the tinyArray
+insert 40 μs
+append 182.3 μs
+
+Results for the smallArray
+insert 54.4 μs
+append 190.4 μs
+
+Results for the mediumArray
+insert 224 μs
+append 237.1 μs
+
+Results for the largeArray
+insert 11.1824 ms
+append 697.6 μs
+
+	           tinyArray   smallArray   mediumArray    largeArray	       extraLargeArray
+
+unshift	       40 μs	    54.4 μs		224 μs	       11.1824ms  	       1.2361474000000001 s
+(insert)
+
+push	       182.3 μs     190.4 μs    237.1 μs       697.6 μs(0.6976ms)  3.325ms(0.0033235s)
+(append)										
+faster/slower: 3.56times 	2.50times 	0.06times 	   15.03times 	       370.94times
+	
+    ***Speed = returning time of new array***
+
+    .unshift is 3.5 times faster than push method for tiny arrray		
+    .unshift is 2.5 times faster than push method for small array		
+    both methods .push and .unshift are about the same returning time but with push method slightly faster for medium array		
+    .push is 15 times more faster than .unshift method for large array		 
+    .push is 370 times more faster than .unshift method for large array 	
+	
+    							Recommand of method to use based on array size	
+
+1)	with tiny and small arrays, the unshift methods take less running time(compared to .push method)								.unshift > .push	
+2)	with medium array, the running time is about the same for both methods (.push method is still the winner)								 .push => .unshift	
+3)	with large and the extrage arrays, the runnning time for push methods is way faster than unshifted methods than push method								.push > unshift	
+										
+	Between Unshift () and Push () methods: 									
+										
+	The push () method returns the last element adding a new element from the last index.									
+	The little difference is that unshift () method adds the element at 0 index and all the values get shifted by 1 by ultimately returning the length of the array. 									
+	Thus, as the array size increases, the returning time of the length of array is getting slower for unshift method as it has to go through all the elements from index 0 to the end of the array before									
+	it returns with the array.									
+	As the push method is simply add the new element then return with the new array without going from index 0									
